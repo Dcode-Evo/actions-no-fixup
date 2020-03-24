@@ -1,6 +1,6 @@
 {
   "name": "actions-no-fixup",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Reject pull request with 'fixup' commits",
   "repository": "https://github.com/Dcode-Evo/actions-no-fixup.git",
   "author": "alek <alekart@users.noreply.github.com>",
@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "@actions/core": "^1.2.3",
+    "@actions/github": "^2.1.1",
     "@types/node": "^13.7.0",
     "@zeit/ncc": "^0.22.0",
     "typescript": "^3.8.3"
