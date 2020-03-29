@@ -1,6 +1,12 @@
 # WIP and fixup Github Action
 
-Reject pull requests with WIP in title or commits starting with WIP or fixup!
+Check presence of "WIP" in PR title and commits starting with "fixup" or "wip".
+
+Will fail to prevent merging:
+- if title starts with (case insensitive): 
+  - `[WIP] `, `WIP `
+- if any commit starts with (case insensitive):
+  - `wip `, `--wip `, `fixup! `, `--fixup `, `fixup `
 
 ```yml
 name: WIP/Fixup
