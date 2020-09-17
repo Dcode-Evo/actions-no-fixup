@@ -13,11 +13,11 @@ async function run() {
     }
 
     const diffCommits = execSync(
-      `git fetch -q && git log --oneline --no-merges --no-decorate origin/${base}...origin/${head}`,
+      `git log --oneline --no-merges --pretty='format:%s' origin/${base}...origin/${head}`,
       {encoding: 'utf8'}
-    ).replace(/^.{8}/gm, '');
+    );
 
-    if (/^-{0,2}(fixup!?|wip)(?!\w)/gim.test(diffCommits)) {
+    if (/^-{0,2}[[!]?(fixup!?|wip)(?!\w)/gim.test(diffCommits)) {
       core.setFailed(`Branch '${head}' contains "fixup" or "WIP" commit(s)`);
     }
   } catch (error) {
