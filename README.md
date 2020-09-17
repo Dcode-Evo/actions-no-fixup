@@ -6,7 +6,7 @@ Will fail to prevent merging:
 - if title starts with (case insensitive): 
   - `[WIP] `, `WIP `
 - if any commit starts with (case insensitive):
-  - `wip `, `--wip `, `fixup! `, `--fixup `, `fixup `
+  - `wip `, `--wip `, `fixup! `, `--fixup `, `fixup `, `!fixup `, `[wip]`, `[fixup]`
 
 ```yml
 name: WIP/Fixup
