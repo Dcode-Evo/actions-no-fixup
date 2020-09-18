@@ -13,7 +13,7 @@ async function run() {
     }
 
     const diffCommits = execSync(
-      `git log --oneline --no-merges --pretty='format:%s' origin/${base}...origin/${head}`,
+      `git fetch && git log --oneline --no-merges --pretty='format:%s' origin/${base}...origin/${head}`,
       {encoding: 'utf8'}
     );
 
