@@ -6249,7 +6249,7 @@ function run() {
             if (/^\[?wip]?(?!\w)/gi.test(pr.title)) {
                 core.setFailed(`Pull request's title indicates WIP status`);
             }
-            const diffCommits = child_process_1.execSync(`git log --oneline --no-merges --pretty='format:%s' origin/${base}...origin/${head}`, { encoding: 'utf8' });
+            const diffCommits = child_process_1.execSync(`git fetch && git log --oneline --no-merges --pretty='format:%s' origin/${base}...origin/${head}`, { encoding: 'utf8' });
             if (/^-{0,2}[[!]?(fixup!?|wip)(?!\w)/gim.test(diffCommits)) {
                 core.setFailed(`Branch '${head}' contains "fixup" or "WIP" commit(s)`);
             }
