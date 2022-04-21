@@ -20,7 +20,7 @@ async function run() {
     if (/^-{0,2}[[!]?(fixup!?|wip)(?!\w)/gim.test(diffCommits)) {
       core.setFailed(`Branch '${head}' contains "fixup" or "WIP" commit(s)`);
     }
-  } catch (error) {
+  } catch (error: any) {
     core.setFailed(error.message);
   }
 }
