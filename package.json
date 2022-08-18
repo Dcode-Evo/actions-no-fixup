@@ -10,7 +10,7 @@
     "build": "tsc && ncc build ./lib/index.js -o ./dist"
   },
   "devDependencies": {
-    "@actions/core": "^1.6.0",
+    "@actions/core": "^1.9.1",
     "@actions/github": "^2.2.0",
     "@types/node": "^16.11.27",
     "@vercel/ncc": "^0.33.4",
